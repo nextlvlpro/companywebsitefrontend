@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import Skeleton from '@mui/material/Skeleton';
 import Stack from '@mui/material/Stack';
 
-import AfterLoginSaleQuery from './afterLoginSaleQuery';
+import AfterLoginSaleQuery from './AfterLoginSaleQuery';
 import { UserContext } from '../../UserContext';
 
 
