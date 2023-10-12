@@ -23,7 +23,7 @@ function classNames(...classes) {
 export default function Navbar() {
   const { user } = useContext(UserContext)
 
-  
+
   return (
     <Disclosure as="nav" className="bg-gray-800 rounded-b-md">
       {({ open }) => (
@@ -75,21 +75,21 @@ export default function Navbar() {
                   )}
                 </Link>
                 {!!user && (
-                  
-                    <div className='flex items-center justify-center gap-3'>
-                      <div className=' cursor-none'>
-                        {user.userName}
-                      </div>
-                      <div className=' cursor-pointer'>
-                        <Link to={'/logout'}>
+
+                  <div className='flex items-center justify-center gap-3'>
+                    <div className=' cursor-none'>
+                      {user.userName}
+                    </div>
+                    <div className=' cursor-pointer'>
+                      <Link to={'/logout'}>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                           <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
                         </svg>
-                        </Link>
-                        
-                      </div>
+                      </Link>
+
                     </div>
-                  
+                  </div>
+
                 )}
 
 
@@ -106,20 +106,16 @@ export default function Navbar() {
 
           <Disclosure.Panel className="sm:hidden">
             <div className="space-y-1 px-2 pb-3 pt-2">
-              {navigation.map((item) => (
-                <Disclosure.Button
-                  key={item.name}
-                  as="Link"
-                  to={item.href}
-                  className={classNames(
-                    item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                    'block rounded-md px-3 py-2 text-base font-medium'
-                  )}
-                  aria-current={item.current ? 'page' : undefined}
-                >
-                  {item.name}
-                </Disclosure.Button>
-              ))}
+
+              <Disclosure.Button>
+                <div className='flex flex-col items-start justify-start gap-1'>
+                  <Link to="/"> <div className='p-1 rounded-md 0 text-white'>Home</div> </Link>
+                  <Link to="/onlysalequery"> <div className='p-1 rounded-md 0 text-white'>Sale Query</div> </Link>
+                </div>
+
+
+              </Disclosure.Button>
+
             </div>
           </Disclosure.Panel>
         </>
