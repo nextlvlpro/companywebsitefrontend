@@ -15,16 +15,16 @@ export default function Home() {
   return (
     <div>
 
-      {!!user && (
-        <SaleQuery />
-      )}
+      
 
       <div className='mb-[100px]'>
         <HeroPage/>
         <CardPage/>
-        
+        {!!user && (
+        <SaleQuery />
+      )}
       </div>
-      
+        
       <Footer />
     </div>
   )
