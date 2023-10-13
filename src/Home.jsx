@@ -4,7 +4,10 @@ import CardPage from './Pages/Home/CardPage'
 
 import Footer from './Pages/Home/Footer'
 import { UserContext } from './UserContext'
-import HeroPage from './Pages/Home/Heropage'
+import HeroPage from './Pages/Home/HeroPage'
+
+
+
 
 
 export default function Home() {
@@ -17,8 +20,8 @@ export default function Home() {
       )}
 
       <div className='mb-[100px]'>
-        <HeroPage />
-        <CardPage />
+        <HeroPage/>
+        <CardPage/>
         
       </div>
       

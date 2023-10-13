@@ -10,7 +10,7 @@ import {
 import { Link } from 'react-router-dom';
 
 
-export default function Heropage() {
+export default function CardPage() {
   return (
     <div className='w-full p-2 flex items-center justify-center gap-2 flex-col sm:flex-row'>
       <Card className="mt-3 rounded-2xl overflow-hidden border-2 border-gray-600 flex flex-col justify-center items-center">
