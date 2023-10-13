@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import SaleQuery from './Pages/OnlySaleQuery/SaleQuery'
 import CardPage from './Pages/Home/CardPage'
-import Heropage from './Pages/Home/Heropage'
+import Heropage from './Pages/Home/HeroPage'
 import Footer from './Pages/Home/Footer'
 import { UserContext } from './UserContext'
 
