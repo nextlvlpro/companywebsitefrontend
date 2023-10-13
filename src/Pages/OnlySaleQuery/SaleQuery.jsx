@@ -112,7 +112,9 @@ export default function SaleQuery() {
                                   Shop Ach:  {isData.ach}
                                 </div>
                                 <div>
-                                  Progress:  {((isData.ach/isData.target)*100).toFixed(2)} %
+                                  Progress:  {((isData.ach/isData.target)*100).toFixed(2) && (
+                                    <>0</>
+                                  )} %
                                 </div>                                
                             </div>
                             )}
