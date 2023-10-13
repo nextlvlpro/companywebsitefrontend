@@ -7,6 +7,7 @@ import {
   Typography,
   Button,
 } from "@material-tailwind/react";
+import { Link } from 'react-router-dom';
 
 
 export default function Heropage() {
@@ -29,7 +30,9 @@ export default function Heropage() {
               Here You can hav query about Sales. <br /> you will need your shop code if you don't have account.
             </Typography>
           </CardBody>
-          <button className='border border-gray-600 p-1 bg-[#1F2937] text-white rounded-xl w-[70%] mb-2'>Know your Sales</button>
+          <div className='border border-gray-600 p-1 bg-[#1F2937] text-white rounded-xl w-[70%] mb-2 flex items-center justify-center'>
+          <Link to={'/onlysalequery'} >Know Your Sales</Link>
+          </div>
         </div>
       </Card>
 
@@ -51,7 +54,10 @@ export default function Heropage() {
               Don't Know your shop code? <br /> You can contact us and find your shop code and register with website.
             </Typography>
           </CardBody>
-          <button className='border border-gray-600 p-1 bg-[#1F2937] text-white rounded-xl w-[70%] mb-2'>Contact Us</button>
+          <div className='border border-gray-600 p-1 bg-[#1F2937] text-white rounded-xl w-[70%] mb-2 flex items-center justify-center'>
+          <Link to={'/contact'} >Reach Us</Link>
+          </div>
+          
         </div>
       </Card>
 
