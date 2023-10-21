@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { Disclosure } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { UserContext } from '../UserContext'
-import axios from 'axios'
+
 
 
 
@@ -108,14 +108,11 @@ export default function Navbar() {
             <div className="space-y-1 px-2 pb-3 pt-2">
 
               <Disclosure.Button>
-                <div className='flex flex-col items-start justify-start gap-1'>
-                  <Link to="/"> <div className='p-1 rounded-md 0 text-white'>Home</div> </Link>
-                  <Link to="/onlysalequery"> <div className='p-1 rounded-md 0 text-white'>Sale Query</div> </Link>
-                </div>
-
-
+                
+                  <Link to='/' className='px-3 rounded-md 0 text-white'>Home</Link>
+                  <Link to="/onlysalequery" className='px-3 rounded-md 0 text-white'>Sale Query</Link>
+                
               </Disclosure.Button>
-
             </div>
           </Disclosure.Panel>
         </>

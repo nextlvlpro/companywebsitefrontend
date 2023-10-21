@@ -60,9 +60,9 @@ export default function SaleQuery() {
     if (!user) {
         return (
             <div>
-                <div className="my-5 mx-auto w-full max-w-xl p-4 text-white border  rounded-lg shadow sm:p-6 md:p-8 bg-gray-800 border-gray-700 flex flex-col gap-2">
+                <div className="my-5 mx-auto w-[300px] p-4 text-black border  rounded-lg shadow sm:p-6 md:p-8 bg-white border-gray-700 flex flex-col gap-2">
                     <form className="space-y-6" action="#">
-                        <h5 className="text-xl font-medium  text-white">Sale Query Platform for Retailers</h5>
+                        <h5 className="text-xl font-medium  text-black">Sale Query Platform for Retailers</h5>
                         <div>
                             <label htmlFor="text" className="block mb-2 text-sm font-medium text-white"></label>
                             <input type="text"
@@ -78,11 +78,11 @@ export default function SaleQuery() {
                             onClick={shopCodeQuery}>
                             Show Your Performance
                         </button>
-                        <div className="text-sm font-medium text-gray-300 cantFind">
+                        <div className="text-sm font-medium text-gray-600 cantFind">
                             Can't find your Shop <Link to="/contact " className="hover:underline text-blue-500">Contact us.</Link>
                         </div>
                     </form>
-                    <div className='mt-4 p-2 transition-all'>
+                    <div className='mt-4 p-4 text-white font-thin transition-all bg-[#1E2936] rounded-md'>
                         {loading && (
                             <Stack>
                                 <div className='flex flex-col gap-0 transition-all'>
@@ -112,9 +112,8 @@ export default function SaleQuery() {
                                   Shop Ach:  {isData.ach}
                                 </div>
                                 <div>
-                                  Progress:  {((isData.ach/isData.target)*100).toFixed(2) && (
-                                    <>0</>
-                                  )} %
+                                  Progress:  {((isData.ach/isData.target)*100).toFixed(2)}%
+                                    
                                 </div>                                
                             </div>
                             )}

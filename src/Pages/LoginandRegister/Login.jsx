@@ -1,39 +1,45 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { UserContext } from '../../UserContext'
 export default function Register() {
-    
+
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const navigate = useNavigate('')
-    const {setUser} = useContext(UserContext);
-    
+    const { setUser, setAdmin, admin } = useContext(UserContext);
+
 
     async function handleRegister(e) {
         e.preventDefault()
-        if(email == '' || password == '') {
+        if (email == '' || password == '') {
             alert("Please Fill all the field")
-        } else { 
+        } else {
+            
             try {
                 const userInfo = await axios.post('/login', { email, password })
-
-                    if(userInfo.data.email == email) {
+                
+                    if (userInfo.data.email == email) {
                         setUser(userInfo.data)
+                        if (userInfo.data.email == 'b2@g') {
+                            setAdmin(true)
+                        }
+                        setAdmin(true)
                         console.log('login Done');
                         navigate('/')
-                    } else if (userInfo.data == 'user Does not exist'){
+                    } else if (userInfo.data == 'user Does not exist') {
                         alert(userInfo.data)
-                    } else if(userInfo.data == "password incorrect"){
+                    } else if (userInfo.data == "password incorrect") {
                         alert('Wrong Password')
                     }
                     else {
                         alert('Login Failed')
-                    }
-             
+                    } 
+              
+                
             }
             catch (e) { alert('Failed') }
-        } 
+        }
     }
 
     return (

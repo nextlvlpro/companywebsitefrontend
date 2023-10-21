@@ -4,13 +4,14 @@ import { Navigate, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 export default function Logout() {
-    const { user, setUser } = useContext(UserContext)
+    const { user, setUser, setAdmin } = useContext(UserContext)
     const [redir, setRedir] = useState(false)
   
     function logout() {
         axios.post('/logout')
         setRedir(true)
         setUser(null)
+        setAdmin(false)
     }
     if(redir) {
         return (
