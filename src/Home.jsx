@@ -9,12 +9,10 @@ import Securedeletequery from './Pages/Securedeletequery.jsx'
 
 
 
-
-
-
 export default function Home() {
 
 const { user, admin } = useContext(UserContext)
+
 
   return (
     <div className='w-full flex items-center justify-center'>
@@ -29,6 +27,7 @@ const { user, admin } = useContext(UserContext)
         {!!admin && (
           <Securedeletequery />
         )}
+
       </div>
       <Footer />
     </div>

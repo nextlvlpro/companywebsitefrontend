@@ -1,7 +1,9 @@
 import React from 'react'
 import Carousel from "nuka-carousel"
-import example from './assests/CarsoulPhotos/example.jpg'
-import { button } from '@material-tailwind/react'
+import p1 from './assests/CarsoulPhotos/p1.jpg'
+import p2 from './assests/CarsoulPhotos/p2.jpg'
+import p3 from './assests/CarsoulPhotos/p3.jpg'
+
 
 export default function HeroPage() {
   return (
@@ -10,7 +12,7 @@ export default function HeroPage() {
         <div className='text-white font-semibold text-center p-2'>
           Welcome to MEDPL official website
         </div>
-        <div className='rounded-2xl overflow-hidden bg-white md:flex hidden w-[600px]'>
+        <div className='rounded-2xl overflow-hidden bg-white md:flex hidden w-[400px]'>
           <Carousel wrapAround={true} autoplay={true} autoplayInterval={5000}
            renderCenterLeftControls={({previousSlide}) => (
              <button onClick={previousSlide} className='h-16 w-10  bg-[#1F2937] shadow-sm shadow-gray-400 flex items-center justify-center rounded-r-md' >
@@ -29,15 +31,21 @@ export default function HeroPage() {
            </button>
           )}
            >  
-            <img className='object-cover' src={example} alt="" />
-            <img className='object-cover' src={example} alt="" />
-            <img className='object-cover' src={example} alt="" />
+            <div>
+            <img src={p1} className=' flex items-center w-full justify-center h-[300px]' alt="" />
+            </div>  
+            <div>
+            <img src={p2} className='flex items-center w-full justify-center h-[300px]' alt="" />
+            </div>            
+            <div>
+            <img src={p3} className=' flex items-center w-full justify-center h-[300px]' alt="" />
+            </div>
           </Carousel>
         </div>
 
               {/* Moble View */}
-        <div className='rounded-2xl overflow-hidden md:hidden flex w-[300px]'>
-          <Carousel wrapAround={true} autoplay={true} autoplayInterval={5000}
+        <div className='rounded-2xl overflow-hidden md:hidden flex items-center justify-center w-[300px]'>
+          <Carousel wrapAround={true} autoplay={true} autoplayInterval={3000}
            renderCenterLeftControls={({previousSlide}) => (
              <button onClick={previousSlide} className='h-10 w-5 bg-[#1F2937] shadow-sm shadow-gray-300 flex items-center justify-center rounded-r-md' >
                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="white" className="w-4 h-4">
@@ -54,9 +62,15 @@ export default function HeroPage() {
           </button>
          )}
           >
-            <img src={example} alt="" />
-            <img src={example} alt="" />
-            <img src={example} alt="" />
+            <div>
+            <img src={p1} className=' flex items-center w-full justify-center h-[300px]' alt="" />
+            </div>  
+            <div>
+            <img src={p2} className=' flex items-center w-full justify-center h-[300px]' alt="" />
+            </div>            
+            <div>
+            <img src={p3} className=' flex items-center w-full justify-center h-[300px]' alt="" />
+            </div>
           </Carousel>
         </div>        
       </div>

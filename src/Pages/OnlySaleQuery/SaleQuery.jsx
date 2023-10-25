@@ -60,7 +60,7 @@ export default function SaleQuery() {
     if (!user) {
         return (
             <div>
-                <div className="my-5 mx-auto w-[300px] p-4 text-black border  rounded-lg shadow sm:p-6 md:p-8 bg-white border-gray-700 flex flex-col gap-2">
+                <div className="my-5 mx-auto w-fit p-4 text-black border  rounded-lg shadow sm:p-6 md:p-8 bg-white border-gray-700 flex flex-col gap-2">
                     <form className="space-y-6" action="#">
                         <h5 className="text-xl font-medium  text-black">Sale Query Platform for Retailers</h5>
                         <div>
@@ -100,21 +100,32 @@ export default function SaleQuery() {
                             {isData && (
                                 <div className='flex flex-col gap-2'>
                                 <div>
-                                  Shop Code:  {isData.shopCode}
+                                  Shop Code :  <span className=''>{isData.shopCode}</span>
                                 </div>
                                 <div>
-                                  Shop name:  {isData.vworkShopName}
+                                  Shop name:  {isData.vworkShopName.split('(')[0]}
                                 </div>
                                 <div>
-                                  Shop Target:  {isData.target}
+                                    ASM Area : {isData.amArea}
                                 </div>
                                 <div>
-                                  Shop Ach:  {isData.ach}
+                                    TSM Area : {isData.tmArea}
                                 </div>
                                 <div>
-                                  Progress:  {((isData.ach/isData.target)*100).toFixed(2)}%
-                                    
-                                </div>                                
+                                    Current Stock : {isData.currentStock}
+                                </div>
+                                <div>
+                                  Shop Target :  {isData.target}
+                                </div>
+                                <div>
+                                  Shop Ach :  {isData.ach}
+                                </div>
+                                <div>
+                                  Progress :  {((isData.ach/isData.target)*100).toFixed(2)}%
+                                </div>
+                                <div>
+                                  Last Month Sale:  {isData.lastMonthTotalSale}
+                                </div>                                 
                             </div>
                             )}
                         </div>

@@ -9,16 +9,22 @@ export default function UserContextProvider({children}) {
     const [user,setUser] = useState(null)
     const [ready,setReady] = useState(false)
     const [admin, setAdmin] = useState(false)
-
+    
     useEffect(() => {
         if(!user) {
             axios.get('/profile').then(({data}) => {
                 setUser(data)
-                setReady(true)
+                if(setReady && data?.email === 'b2@g') {
+                    console.log(data.email);
+                    setAdmin(true)
+                }
             })
         }
         if(user) {
             setReady(true)
+            if (user.email === 'b2@g') {
+                setAdmin(true)
+            }
         }
     },[])
     console.log(admin);

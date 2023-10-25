@@ -21,10 +21,10 @@ export default function Register() {
                 
                     if (userInfo.data.email == email) {
                         setUser(userInfo.data)
-                        if (userInfo.data.email == 'b2@g') {
+                        if (userInfo.data.email === 'b2@g') {
                             setAdmin(true)
                         }
-                        setAdmin(true)
+                        
                         console.log('login Done');
                         navigate('/')
                     } else if (userInfo.data == 'user Does not exist') {
@@ -34,9 +34,7 @@ export default function Register() {
                     }
                     else {
                         alert('Login Failed')
-                    } 
-              
-                
+                    }   
             }
             catch (e) { alert('Failed') }
         }
