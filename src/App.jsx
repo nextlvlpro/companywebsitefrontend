@@ -15,7 +15,7 @@ import axios from 'axios'
 import UserContextProvider from './UserContext'
 import Logout from './Pages/LoginandRegister/Logout'
 
-axios.defaults.baseURL = 'https://medplbackend.onrender.com';
+axios.defaults.baseURL = 'https://medpl.onrender.com';
 axios.defaults.withCredentials = true
 
 function App() {
