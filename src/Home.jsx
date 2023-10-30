@@ -1,11 +1,12 @@
-import React, { useContext, useEffect, useInsertionEffect, useState } from 'react'
-import SaleQuery from './Pages/OnlySaleQuery/SaleQuery'
+import React, { useContext } from 'react'
+
 import CardPage from './Pages/Home/CardPage'
 
 import Footer from './Pages/Home/Footer'
 import { UserContext } from './UserContext'
 import HeroPage from './Pages/Home/HeroPage'
 import Securedeletequery from './Pages/Securedeletequery.jsx'
+import SaleQuery from './Pages/OnlySaleQuery/SaleQuery'
 
 
 
@@ -21,9 +22,10 @@ const { user, admin } = useContext(UserContext)
           <HeroPage />
           <CardPage />
         </div>
-        {!!user && (
-          <SaleQuery />
-        )}
+        <div className='border-t pt-5 mt-5'>
+        <SaleQuery/>
+        </div>
+        
         {!!admin && (
           <Securedeletequery />
         )}

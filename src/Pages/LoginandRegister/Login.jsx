@@ -7,7 +7,7 @@ export default function Register() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const navigate = useNavigate('')
-    const { setUser, setAdmin, admin } = useContext(UserContext);
+    const {setUser, setAdmin, admin} = useContext(UserContext);
 
 
     async function handleRegister(e) {
@@ -21,10 +21,9 @@ export default function Register() {
                 
                     if (userInfo.data.email == email) {
                         setUser(userInfo.data)
-                        if (userInfo.data.email === 'b2@g') {
+                        if (userInfo.data.email === 'bhanusharma089@gmail.com') {
                             setAdmin(true)
                         }
-                        
                         console.log('login Done');
                         navigate('/')
                     } else if (userInfo.data == 'user Does not exist') {
