@@ -44,7 +44,7 @@ export default function ShopQuery() {
               Ach% : {((items.ach/items.target)*100).toFixed(1)} %
             </div>
             <div className='  p-1 w-[220px]'>
-              Last Month Sale : {items.ach}
+              Last Month Sale : {items.lastMonthTotalSale}
             </div>
         </div>
       ))}
