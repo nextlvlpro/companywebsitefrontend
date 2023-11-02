@@ -9,10 +9,10 @@ export default function HeroPage() {
   return (
     <div className='m-auto w-full flex items-center justify-center'>
       <div>
-        <div className='text-white font-semibold text-center p-2'>
+        <div className=' font-semibold text-center py-6 px-2 text-2xl text-white'>
           Welcome to MEDPL official website
         </div>
-        <div className='rounded-2xl overflow-hidden bg-white md:flex hidden w-[400px]'>
+        <div className='rounded-2xl overflow-hidden bg-white md:flex hidden w-[400px] m-auto'>
           <Carousel wrapAround={true} autoplay={true} autoplayInterval={5000}
            renderCenterLeftControls={({previousSlide}) => (
              <button onClick={previousSlide} className='h-16 w-10  bg-[#1F2937] shadow-sm shadow-gray-400 flex items-center justify-center rounded-r-md' >
@@ -44,7 +44,7 @@ export default function HeroPage() {
         </div>
 
               {/* Moble View */}
-        <div className='rounded-2xl overflow-hidden md:hidden flex items-center justify-center w-[300px]'>
+        <div className='rounded-2xl overflow-hidden md:hidden flex items-center justify-center w-[300px] m-auto'>
           <Carousel wrapAround={true} autoplay={true} autoplayInterval={3000}
            renderCenterLeftControls={({previousSlide}) => (
              <button onClick={previousSlide} className='h-10 w-5 bg-[#1F2937] shadow-sm shadow-gray-300 flex items-center justify-center rounded-r-md' >

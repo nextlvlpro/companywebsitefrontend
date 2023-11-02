@@ -2,11 +2,12 @@ import React, { useContext } from 'react'
 
 import CardPage from './Pages/Home/CardPage'
 
-import Footer from './Pages/Home/Footer'
+
 import { UserContext } from './UserContext'
 import HeroPage from './Pages/Home/HeroPage'
-import Securedeletequery from './Pages/Securedeletequery.jsx'
-import SaleQuery from './Pages/OnlySaleQuery/SaleQuery'
+import Securedeletequery from './Pages/admin/Securedeletequery.jsx'
+
+import Footer2 from './Pages/Home/Footer2'
 
 
 
@@ -16,22 +17,16 @@ const { user, admin } = useContext(UserContext)
 
 
   return (
-    <div className='w-full flex items-center justify-center'>
-      <div className='w-[90%] m-auto mt-[30px] bg-[#1F2937] rounded-3xl shadow-lg mb-[50px] pb-1'>
-        <div className=''>
+    <div className='w-full flex items-center justify-center flex-col'>
+      <div className='w-[100%] m-auto mt-[30px] bg-blue-500  shadow-lg mb-6 pb-10'>
+        <div className='flex items-center justify-center flex-col m-auto'>
           <HeroPage />
           <CardPage />
         </div>
-        <div className='border-t pt-5 mt-5'>
-        <SaleQuery/>
-        </div>
-        
-        {!!admin && (
-          <Securedeletequery />
-        )}
 
       </div>
-      <Footer />
+      <Footer2 />
+      
     </div>
   )
 }

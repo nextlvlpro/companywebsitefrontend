@@ -15,6 +15,7 @@ export default function UserContextProvider({children}) {
         if(!user) {
             axios.get('/profile').then(({data}) => {
                 setUser(data)
+                setReady(true)
                 if(setReady && data?.email =='bhanusharma089@gmail.com') {
                     setAdmin(true)
                 }

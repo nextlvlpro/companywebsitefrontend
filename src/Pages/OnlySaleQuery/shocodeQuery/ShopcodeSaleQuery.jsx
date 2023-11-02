@@ -13,14 +13,14 @@ export default function ShopcodeSaleQuery() {
 
     }
   return (
-    <div className='m-auto text-lg text-white border-2 my-1 p-2 flex flex-col items-center justify-center max-w-[500px] rounded-2xl'>
-      <form className='flex flex-col items-center jc'> 
-        <input type="text" className='outline-none border border-gray-400 rounded text-black px-2 py-1'
+    <div className='m-auto text-lg text-white border-2 my-1 p-2 flex flex-col items-center justify-center max-w-[500px] rounded-2xl w-full'>
+      <form className='flex flex-col items-center justify-center w-full'> 
+        <input type="text" className='outline-none border border-gray-400 rounded text-black px-2 py-1 w-full text-center'
         value={shopCode}
         onChange={(e) => setShopCode(e.target.value)}
         placeholder='Enter Shop Code'
         />
-        <button onClick={handleShopcodeSaleQuery} type='submit' className='w-lg border py-1 px-2 m-1 shadow-sm shadow-white bg-blue-600 text-white'> click to get your sales</button>
+        <button onClick={handleShopcodeSaleQuery} type='submit' className='w-lg border py-1 px-2 m-1 shadow-sm shadow-white bg-[#00738E] text-white rounded'>Check Sales</button>
       </form>
       {!!shopSaleData && (
         <div className='border my-2 p-2 rounded bg-[#1F2937] w-full flex flex-col gap-2 items-center'>
