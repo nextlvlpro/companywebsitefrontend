@@ -8,12 +8,12 @@ import { UserContext } from '../UserContext'
 
 
 export default function TheNavbar() {
-  const { user,admin } = useContext(UserContext)
+  const { user, admin } = useContext(UserContext)
 
 
   return (
-    <div className='bg-blue-500'>
-      <Navbar className='bg-blue-500 text-white'>
+    <div className='bg-blue-500 rounded-b-lg'>
+      <Navbar className='bg-blue-500 text-white rounded-b-lg'>
         <Navbar.Brand>
           <img src={logo} className="mr-3 h-6 sm:h-9 rounded" alt="Flowbite React Logo" />
           <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">MEDPL</span>
@@ -52,50 +52,46 @@ export default function TheNavbar() {
           </div>
 
           <div className='mx-2'>
-          <Dropdown label={!!user ? <>Logout</> : <>Log in</>} dismissOnClick={true} className='z-50'>
-            <Dropdown.Item>{!!user && (
-              <>
-                {user.userName}
-              </>
-            )}
-            </Dropdown.Item>
-            <Dropdown.Item as={Link} to={'/login'}>
-              {user && admin && (
-                <>
-                  <Link to={'/adminpanal'}>Admin Panal</Link>
-                </>
+            <Dropdown label={!!user ? <>Logout</> : <>Log in</>} dismissOnClick={true} className='z-40'>
+
+              <Dropdown.Item as={Link} to={'/login'}>
+                {user && admin && (
+                  <>
+                    <Link to={'/adminpanal'}>Admin Panal</Link>
+                  </>
+                )}
+              </Dropdown.Item>
+              {!!user && (
+                <Dropdown.Item as={Link} to={'/logout'}>
+                  Log Out
+                </Dropdown.Item>
               )}
-            </Dropdown.Item>
-            <Dropdown.Item as={Link} to={'/logout'}>
+
+              {!user && (
+                <Dropdown.Item as={Link} to={'/login'}>
+                  Log in
+                </Dropdown.Item>
+              )}
+
+              {!user && (
+                <Dropdown.Item as={Link} to={'/register'}>
+                    Register
+                </Dropdown.Item>
+              )}
               {!!user && (
                 <>
-                  Log Out
+                  <Dropdown.Divider className='bg-gray-400' />
+                  <Dropdown.Item>
+                    {user.userName}
+                  </Dropdown.Item>
+
                 </>
               )}
-            </Dropdown.Item>
-            
-            <Dropdown.Item as={Link} to={'/login'}>
-              {!user && (
-                <>
-                  Log In
-                </>
-              )}
-            </Dropdown.Item>
-            {!user && (
-              <Dropdown.Item as={Link} to={'/register'}>
-                <>
-                  Register
-                </>
-            </Dropdown.Item>
-            )}
-          </Dropdown>
+            </Dropdown>
+
           </div>
         </div>
       </Navbar>
     </div>
   )
 }
-
-
-
-
