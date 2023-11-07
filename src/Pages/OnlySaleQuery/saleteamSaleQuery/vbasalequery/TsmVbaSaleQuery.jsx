@@ -21,7 +21,7 @@ export default function TsmVbaSaleQuery() {
   return (
     <div>
       <div className='flex flex-col py-5 m-2'>
-        <div className='bg-blue-500 p-2 text-white rounded text-center w-[200px] m-auto mb-2'>
+        <div className='bg-blue-500 p-2 text-white rounded text-center w-[250px] m-auto mb-2'>
           VBA Sale Query {`(${tsmArea.tsmarea})`}
         </div>
 
