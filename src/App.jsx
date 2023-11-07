@@ -26,7 +26,7 @@ import ShopSaleTSMAreaQuery from './Pages/OnlySaleQuery/officeSaleQuery/office/t
 import VBASaleTSMAreaQuery from './Pages/OnlySaleQuery/officeSaleQuery/office/tsmarea/VBASaleTSMAreaQuery'
 
 
-axios.defaults.baseURL = 'http://localhost:4000';
+axios.defaults.baseURL = 'https://medplbackend.onrender.com';
 axios.defaults.withCredentials = true
 
 function App() {
