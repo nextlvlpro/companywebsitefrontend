@@ -4,48 +4,54 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
 export default function ShopQuery() {
-    const {user} = useContext(UserContext);
-    const [shopSaleData, setShopSaleData] = useState(null)
-    const [loading, setLoading] =useState(false)
-    const tsmarea = useParams()
+  const { user } = useContext(UserContext);
+  const [shopSaleData, setShopSaleData] = useState(null)
+  const [loading, setLoading] = useState(false)
 
-    
-    useEffect(() => {
-      
-      if(user) {
-        setLoading(true)
-        axios.post('/tsmsalequery', tsmarea).then(({data}) => {
-          setShopSaleData(data)
-          setLoading(false)
+  const tsmarea = useParams()
+
+  useEffect(() => {
+    if (user) {
+      setLoading(true)
+      axios.post('/tsmsalequery', tsmarea).then(({ data }) => {
+        setShopSaleData(data)
+        setLoading(false)
       })
-      } 
-    },[tsmarea])
+    }
+  }, [user])
 
   return (
-    <div className='w-full flex flex-col py-5 m-2 px-1'>
-      <div className='bg-blue-500 p-2 text-white rounded text-center w-[200px] m-auto mb-2'>
-      Shop Sale Query
+    <div className='flex flex-col px-2'>
+      <div className='bg-blue-500 p-2 text-white rounded text-center w-[200px] m-auto my-5'>
+        Shop Sale Query {`(${tsmarea.tsmarea})`}
       </div>
-      {shopSaleData?.map((items,i) => (
-        <div key={i} className='flex md:flex-row flex-col gap-2 shadow-md shadow-gray-400 mb-3 rounded-2xl md:items-center md:justify-evenly bg-gray-300 text-black font-medium p-2'>
-            <div className='md:border-r border-gray-400 p-1 pl-3  md:w-[300px] md:bg-none bg-blue-500 rounded-lg text-white'>
-                Shop Name : {items.vworkShopName}
+      {shopSaleData?.map((items, i) => (
+
+        <div key={i} className='flex flex-col text-left shadow-sm shadow-blue-500  border border-blue-500 rounded-xl items-center p-1 mb-2 bg-gray-300'>
+          <div className='bg-blue-500 text-white p-1 rounded '>
+            {items?.vworkShopName.split('(')[0]}
+          </div>
+          <div className='flex items-center justify-center gap-2 p-1'>
+            <div className='border-r border-gray-500 p-1'>
+              Stock: {items.currentStock}
             </div>
-            <div className='md:border-r border-gray-400 p-1 w-[100px]'>
-                Stock : {items.currentStock}
+          </div>
+          <div className='flex items-center justify-center gap-2 '>
+            <div className='border-r border-gray-500 p-1'>
+              Target: {items.target}
             </div>
-            <div className='md:border-r border-gray-400 p-1 w-[100px]'>
-            Target : {items.target}
+            <div className='border-r border-gray-500 p-1'>
+              Ach: {items.ach}
             </div>
-            <div className='md:border-r border-gray-400 p-1 w-[100px]'>
-              Ach : {items.ach}
+            <div>
+              Ach %: {((items.ach / items.target) * 100).toFixed(1)} %
             </div>
-            <div className='md:border-r border-gray-400 p-1 w-[150px]'>
-              Ach% : {((items.ach/items.target)*100).toFixed(1)} %
+          </div>
+          <div className='flex items-center justify-center gap-2 '>
+            <div className='border-r border-gray-500 p-1'>
+              Last Month Sale: {items.lastMonthTotalSale}
             </div>
-            <div className='  p-1 w-[220px]'>
-              Last Month Sale : {items.lastMonthTotalSale}
-            </div>
+          </div>
         </div>
       ))}
       {!!loading && (
