@@ -22,7 +22,7 @@ export default function ShopQuery() {
 
   return (
     <div className='flex flex-col px-2'>
-      <div className='bg-blue-500 p-2 text-white rounded text-center w-[200px] m-auto my-5'>
+      <div className='bg-blue-500 p-2 text-white rounded text-center w-[250px] m-auto my-5'>
         Shop Sale Query {`(${tsmarea.tsmarea})`}
       </div>
       {shopSaleData?.map((items, i) => (
