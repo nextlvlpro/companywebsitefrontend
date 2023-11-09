@@ -2,13 +2,14 @@ import React, { useContext, useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { UserContext } from '../../UserContext'
+import { Toast } from 'flowbite-react';
 export default function Register() {
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const navigate = useNavigate('')
     const {setUser, setAdmin, admin} = useContext(UserContext);
-
+    const [showToast, setShowToast] = useState(false);
 
     async function handleRegister(e) {
         e.preventDefault()
@@ -24,18 +25,22 @@ export default function Register() {
                         if (userInfo.data.email === 'bhanusharma089@gmail.com') {
                             setAdmin(true)
                         }
-                        console.log('login Done');
-                        navigate('/')
+                        
+                        setShowToast("Login Done")
+
+                        setTimeout(() => {
+                            navigate('/')
+                        }, 1000); 
                     } else if (userInfo.data == 'user Does not exist') {
-                        alert(userInfo.data)
+                        setShowToast(userInfo.data)
                     } else if (userInfo.data == "password incorrect") {
-                        alert('Wrong Password')
+                        setShowToast('Wrong Password')
                     }
                     else {
-                        alert('Login Failed')
+                        setShowToast('Login Failed')
                     }   
             }
-            catch (e) { alert('Failed') }
+            catch (e) { setShowToast('Failed') }
         }
     }
 
@@ -86,6 +91,18 @@ export default function Register() {
                     </div>
                 </div>
             </section>
+            {!!showToast && (
+                <div className='absolute top-5 right-6 shadow-md'>
+
+                    <Toast>
+                        <div className=' flex items-center justify-center gap-2 z-50 text-blue-500 font-semibold'>
+                            {showToast}
+                            <Toast.Toggle onDismiss={() => setShowToast(false)} />
+                        </div>
+                    </Toast>
+                </div>
+
+            )}
         </div>
     )
 }
