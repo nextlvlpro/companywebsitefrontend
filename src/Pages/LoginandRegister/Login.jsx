@@ -15,7 +15,7 @@ export default function Register() {
     const [userCookie,setUserCookie] = useState(null)
 
     useEffect(()=> {
-        console.log(userCookie);
+        
         localStorage.setItem('token', userCookie)
     },[userCookie])
     localStorage.setItem('token', userCookie)
