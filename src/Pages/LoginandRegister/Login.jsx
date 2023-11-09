@@ -33,7 +33,7 @@ export default function Register() {
                         if (userInfo.data.email === 'bhanusharma089@gmail.com') {
                             setAdmin(true)
                         }
-                        console.log(userInfo.data.token);
+                 
                         setUserCookie(userInfo.data.token)
                         setShowToast("Login Done")
 
