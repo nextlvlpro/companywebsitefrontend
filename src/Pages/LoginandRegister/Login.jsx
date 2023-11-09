@@ -12,7 +12,12 @@ export default function Register() {
     const navigate = useNavigate('')
     const {setUser, setAdmin, admin} = useContext(UserContext);
     const [showToast, setShowToast] = useState(false);
+    const [userCookie,setUserCookie] = useState(null)
 
+    useEffect(()=> {
+        console.log(userCookie);
+    },[userCookie])
+    localStorage.setItem('token', userCookie)
     async function handleRegister(e) {
         e.preventDefault()
         if (email == '' || password == '') {
@@ -21,19 +26,21 @@ export default function Register() {
             
             try {
                 const userInfo = await axios.post('/login', { email, password })
-                
+
                     if (userInfo.data.email == email) {
                         setUser(userInfo.data)
                         if (userInfo.data.email === 'bhanusharma089@gmail.com') {
                             setAdmin(true)
                         }
-                       
+                        setUserCookie(Cookies.get('token'))
+                        
                         setShowToast("Login Done")
 
                         setTimeout(() => {
-                             window.localStorage.setItem('token', Cookies.get('token') )
+                            
                             navigate('/')
-                        }, 1000); 
+                        }, 1000);
+
                     } else if (userInfo.data == 'user Does not exist') {
                         setShowToast(userInfo.data)
                     } else if (userInfo.data == "password incorrect") {
