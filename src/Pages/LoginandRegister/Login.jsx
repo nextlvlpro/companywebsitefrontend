@@ -27,10 +27,11 @@ export default function Register() {
                         if (userInfo.data.email === 'bhanusharma089@gmail.com') {
                             setAdmin(true)
                         }
-                        window.localStorage.setItem('token', Cookies.get('token') )
+                       
                         setShowToast("Login Done")
 
                         setTimeout(() => {
+                             window.localStorage.setItem('token', Cookies.get('token') )
                             navigate('/')
                         }, 1000); 
                     } else if (userInfo.data == 'user Does not exist') {
