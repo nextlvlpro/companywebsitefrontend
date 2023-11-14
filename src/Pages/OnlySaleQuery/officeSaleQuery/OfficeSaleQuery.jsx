@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { UserContext } from '../../../UserContext'
+import ShopcodeSaleQuery from '../shocodeQuery/ShopcodeSaleQuery'
 
 export default function OfficeSaleQuery() {
   const {user} = useContext(UserContext)
@@ -12,6 +13,7 @@ export default function OfficeSaleQuery() {
                     <Link to={'/officevbaquery'} className='bg-blue-500 p-2 text-white rounded w-[200px] text-center' >VBA Sales</Link>
                 </>
             )}
+            <ShopcodeSaleQuery/>
     </div>
   )
 }

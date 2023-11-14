@@ -14,8 +14,6 @@ export default function VBASaleQuery() {
   async function hadlevbasalesdata(e) {
 
     e.preventDefault()
-
-    console.log(vbavworkid);
     await axios.post('/vbasalequery', { vbavworkid }).then(({data}) => {
       setVbasaledata(data)
     })
@@ -29,27 +27,30 @@ export default function VBASaleQuery() {
         <div className='p-4'>
           VBA Sale Portal
         </div>
-        <button onClick={hadlevbasalesdata} type='submit' className='rounded w-lg border py-1 px-2 m-1 shadow-sm shadow-white bg-[#00738E] text-white'> Check Sales</button>
+        <button onClick={hadlevbasalesdata} type='submit' className='rounded w-lg border py-1 px-2 mb-3 shadow-sm shadow-white bg-[#004e8e] text-white'> Check Sales</button>
      
       
         {!!vbasaledata && (
           <>
           <div className='p-2 rounded-lg w-full flex flex-col gap-2 items-center border'>
-            <div className='text-left w-[150px]'> 
+          <div className='text-left'> 
+              VBA Name : {vbasaledata.vbaname.split('_')[0]}
+            </div>
+            <div className='text-left'> 
               Target : {vbasaledata.target}
             </div>
-            <div className='text-left w-[150px]'>
+            <div className='text-left'>
               Ach : {vbasaledata.ach}
             </div>
-            <div className='text-left w-[150px]'>
+            <div className='text-left'>
               Ach % : {((vbasaledata.ach/vbasaledata.target)*100).toFixed(1)}%
             </div>
             {((vbasaledata.ach-vbasaledata.target)<0) && (
               <div className='text-xl text-center'> 
-                You need {vbasaledata.target-vbasaledata.ach} Units to achieve your target <br/>
-                <br />
-                You will be eligble for incentive if you achieve 90% of your Target. <br /> <br />
-                For incentive you will need {Math.ceil((vbasaledata.target)*0.9)} Units.
+                You need {vbasaledata.target-vbasaledata.ach} Units to achieve 100% of your target.<br/>
+                
+                You will be eligble for 90% incentive if you achieve 90% of your Target. 
+                For incentive you will need {Math.ceil((vbasaledata.target)*0.9)-vbasaledata.ach} More Units.
               </div>
             )}
             </div>

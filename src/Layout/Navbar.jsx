@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import logo from "./photos/logo.jpeg"
 import { Link } from 'react-router-dom'
-import { Dropdown, Navbar, Avatar } from 'flowbite-react';
+import { Dropdown, Navbar} from 'flowbite-react';
 import { UserContext } from '../UserContext'
 
 
@@ -14,7 +14,7 @@ export default function TheNavbar() {
   return (
     <div className='bg-blue-500 rounded-b-lg'>
       <Navbar className='bg-blue-500 text-white rounded-b-lg'>
-        <Navbar.Brand>
+        <Navbar.Brand as={Link} to='/'>
           <img src={logo} className="mr-3 h-6 sm:h-9 rounded" alt="Flowbite React Logo" />
           <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">MEDPL</span>
         </Navbar.Brand>
