@@ -9,7 +9,7 @@ export default function Logout() {
   
     function logout() {
         axios.post('/logout')
-        window.localStorage.setItem('token','')
+        window.localStorage.clear()
         setRedir(true)
         setUser(null)
         setAdmin(false)

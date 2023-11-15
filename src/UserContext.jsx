@@ -11,24 +11,24 @@ export default function UserContextProvider({children}) {
     const [user,setUser] = useState(null)
     const [ready,setReady] = useState(false)
     const [admin, setAdmin] = useState(false)
-    const token = localStorage.getItem('token')
+    
     
     
     useEffect(() => {
         if(!user) {
-            const token = localStorage.getItem('token')
-            axios.post('/profile',{token}).then(({data}) => {
+            const data = {...localStorage}
+            
                 setUser(data)
                 setReady(true)
                 if(setReady && data?.email =='bhanusharma089@gmail.com') {
                     setAdmin(true)
                 }
-            })
-        }
-        if(user) {
             
+        }
+        
+        if(user) {
             setReady(true)
-            if (user.email === 'b2@g') {
+            if (user.email === 'bhanusharma089@gmail.com') {
                 setAdmin(true)
             }
         }

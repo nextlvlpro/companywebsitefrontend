@@ -21,10 +21,10 @@ export default function TheNavbar() {
 
         <div className='flex items-center justify-center gap-2'>
           <Navbar.Collapse>
-            <Navbar.Link as={Link} to={'/'} className='text-white'>
+            <Navbar.Link as={Link} to='/' className='text-white'>
               Home
             </Navbar.Link>
-            <Navbar.Link as={Link} to={'/onlysalequery'} className='text-white'>
+            <Navbar.Link as={Link} to='/onlysalequery' className='text-white'>
               Sale Query
             </Navbar.Link>
             <Navbar.Link as={Link} to={'/contact'} className='text-white'>
