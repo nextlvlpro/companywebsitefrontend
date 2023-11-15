@@ -1,5 +1,5 @@
 
-import axios from 'axios'
+
 import { createContext, useEffect, useState } from 'react'
 export const UserContext = createContext({})
 
@@ -18,7 +18,7 @@ export default function UserContextProvider({children}) {
         if(!user) {
             const data = {...localStorage}
             
-                if(data) {
+            if(data) {
                 setUser(data)
                 setReady(true)
                 if(setReady && data?.email =='bhanusharma089@gmail.com') {
@@ -27,6 +27,7 @@ export default function UserContextProvider({children}) {
                     setUser(null)
                 }
             }
+                
             
         }
         
