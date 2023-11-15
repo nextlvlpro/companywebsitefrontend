@@ -18,11 +18,15 @@ export default function UserContextProvider({children}) {
         if(!user) {
             const data = {...localStorage}
             
+                if(data) {
                 setUser(data)
                 setReady(true)
                 if(setReady && data?.email =='bhanusharma089@gmail.com') {
                     setAdmin(true)
+                } else {
+                    setUser(null)
                 }
+            }
             
         }
         
