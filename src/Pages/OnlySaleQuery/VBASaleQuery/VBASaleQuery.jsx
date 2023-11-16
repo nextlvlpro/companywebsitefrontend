@@ -49,8 +49,12 @@ export default function VBASaleQuery() {
               <div className='text-xl text-center'> 
                 You need {vbasaledata.target-vbasaledata.ach} Units to achieve 100% of your target.<br/>
                 
-                You will be eligble for 90% incentive if you achieve 90% of your Target. 
+                 {((vbasaledata.ach/vbasaledata.target)*100).toFixed(1)<90 && (
+                  <>
+                  You will be eligble for 90% incentive if you achieve 90% of your Target. 
                 For incentive you will need {Math.ceil((vbasaledata.target)*0.9)-vbasaledata.ach} More Units.
+                  </>
+                )}
               </div>
             )}
             </div>
