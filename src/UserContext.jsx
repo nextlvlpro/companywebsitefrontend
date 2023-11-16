@@ -13,18 +13,16 @@ export default function UserContextProvider({children}) {
     const [admin, setAdmin] = useState(false)
     
     
-    
     useEffect(() => {
+        
         if(!user) {
-            const data = {...localStorage}
-            
-            if(data) {
-                setUser(data)
+            if(localStorage.length<1) {
+                setUser(null)
+            } else {
+                setUser({...localStorage})
                 setReady(true)
-                if(setReady && data?.email =='bhanusharma089@gmail.com') {
+                if(setReady && {...localStorage}?.email =='bhanusharma089@gmail.com') {
                     setAdmin(true)
-                } else {
-                    setUser(null)
                 }
             }
                 
@@ -32,6 +30,7 @@ export default function UserContextProvider({children}) {
         }
         
         if(user) {
+            
             setReady(true)
             if (user.email === 'bhanusharma089@gmail.com') {
                 setAdmin(true)
