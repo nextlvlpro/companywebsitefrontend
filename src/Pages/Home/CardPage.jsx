@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {
   Card,
   CardHeader,
@@ -6,9 +6,11 @@ import {
   Typography,
 } from "@material-tailwind/react";
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../UserContext';
 
 
 export default function CardPage() {
+  const {user} = useContext(UserContext)
   return (
     <div className='w-full p-2 flex items-center justify-center gap-2 flex-col sm:flex-row pb-2 sm:flex-wrap'>
       <Card className="mt-3 rounded-2xl overflow-hidden border-2 border-gray-600 flex flex-col justify-center items-center w-[300px] h-[300px]">
@@ -33,6 +35,90 @@ export default function CardPage() {
           </div>
         </div>
       </Card>
+
+      {user?.subdesignation == 'tsm' && (
+        <Card className="mt-3 rounded-2xl overflow-hidden border-2 border-gray-600 flex flex-col justify-center items-center w-[300px] h-[300px]">
+        <CardHeader color="blue-gray" className="relative">
+          <div className='mt-2'>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="black" className="w-9 h-9">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5m6 4.125l2.25 2.25m0 0l2.25 2.25M12 13.875l2.25-2.25M12 13.875l-2.25 2.25M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
+            </svg>
+
+
+          </div>
+        </CardHeader>
+        <div className='flex flex-col justify-center items-center'>
+          <CardBody className='w-full '>
+            <Typography variant="h5" color="blue-gray">
+              Pending Activations
+            </Typography>
+            <Typography>
+              Sale Punched but not Ative <br /> Here You can check the sales which are punched but still not active.
+            </Typography>
+          </CardBody>
+          <div className='border border-gray-600 p-1 bg-[#1F2937] text-white rounded-xl w-[70%] mb-2 flex items-center justify-center'>
+          <Link to={'/pendingactivation'} >Pending Activations</Link>
+          </div>
+        </div>
+      </Card>
+      )}
+
+      
+      {user?.subdesignation == 'asm' && (
+        <Card className="mt-3 rounded-2xl overflow-hidden border-2 border-gray-600 flex flex-col justify-center items-center w-[300px] h-[300px]">
+        <CardHeader color="blue-gray" className="relative">
+          <div className='mt-2'>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="black" className="w-9 h-9">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5m6 4.125l2.25 2.25m0 0l2.25 2.25M12 13.875l2.25-2.25M12 13.875l-2.25 2.25M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
+            </svg>
+
+
+          </div>
+        </CardHeader>
+        <div className='flex flex-col justify-center items-center'>
+          <CardBody className='w-full '>
+            <Typography variant="h5" color="blue-gray">
+              Pending Activations
+            </Typography>
+            <Typography>
+              Sale Punched but not Ative <br /> Here You can check the sales which are punched but still not active.
+            </Typography>
+          </CardBody>
+          <div className='border border-gray-600 p-1 bg-[#1F2937] text-white rounded-xl w-[70%] mb-2 flex items-center justify-center'>
+          <Link to={'/pendingactivation'} >Pending Activations</Link>
+          </div>
+        </div>
+      </Card>
+      )}
+
+{user?.subdesignation == 'vba' && (
+        <Card className="mt-3 rounded-2xl overflow-hidden border-2 border-gray-600 flex flex-col justify-center items-center w-[300px] h-[300px]">
+        <CardHeader color="blue-gray" className="relative">
+          <div className='mt-2'>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="black" className="w-9 h-9">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5m6 4.125l2.25 2.25m0 0l2.25 2.25M12 13.875l2.25-2.25M12 13.875l-2.25 2.25M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
+            </svg>
+
+
+          </div>
+        </CardHeader>
+        <div className='flex flex-col justify-center items-center'>
+          <CardBody className='w-full '>
+            <Typography variant="h5" color="blue-gray">
+              Pending Activations
+            </Typography>
+            <Typography>
+              Sale Punched but not Ative <br /> Here You can check the sales which are punched but still not active.
+            </Typography>
+          </CardBody>
+          <div className='border border-gray-600 p-1 bg-[#1F2937] text-white rounded-xl w-[70%] mb-2 flex items-center justify-center'>
+          <Link to={'/pendingactivation'} >Pending Activations</Link>
+          </div>
+        </div>
+      </Card>
+      )}
+
+
 
       <Card className="mt-3 rounded-2xl overflow-hidden border-2 border-gray-600 flex flex-col justify-center items-center w-[300px] h-[300px]">
         <CardHeader color="blue-gray" className="relative">
@@ -81,6 +167,8 @@ export default function CardPage() {
           </div>
         </div>
       </Card>
+
+      
     </div>
   )
 }

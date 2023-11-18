@@ -18,7 +18,7 @@ const { user, admin } = useContext(UserContext)
 
   return (
     <div className='w-full flex items-center justify-center flex-col'>
-      <div className='w-[90%] m-auto mt-[30px] bg-blue-500  shadow-lg mb-2 pb-10 rounded-lg'>
+      <div className='w-[90%] m-auto mt-[30px] bg-blue-500 shadow-lg mb-2 pb-10 rounded-lg'>
         <div className='flex items-center justify-center flex-col m-auto'>
           <HeroPage />
           <CardPage />

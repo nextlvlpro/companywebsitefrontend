@@ -3,6 +3,8 @@ import { UserContext } from '../../UserContext'
 import Securedeletequery from './Securedeletequery'
 import EmployeeInfo from './EmployeeInfo'
 import Vbasales from './Vbasales'
+import PendingActivationUpload from './PendingActivationUpload'
+
 
 export default function AdminPanal() {
     const {user,admin} = useContext(UserContext)
@@ -12,6 +14,7 @@ export default function AdminPanal() {
       <Securedeletequery/>
       <EmployeeInfo />
       <Vbasales/>
+      <PendingActivationUpload />
     </div>
   )
 }

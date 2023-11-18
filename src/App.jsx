@@ -24,9 +24,10 @@ import OfficeShopQuery from './Pages/OnlySaleQuery/officeSaleQuery/office/asmare
 import OfficeVBASaleQuery from './Pages/OnlySaleQuery/officeSaleQuery/office/asmarea/OfficeVBASaleQuery'
 import ShopSaleTSMAreaQuery from './Pages/OnlySaleQuery/officeSaleQuery/office/tsmarea/ShopSaleTSMAreaQuery'
 import VBASaleTSMAreaQuery from './Pages/OnlySaleQuery/officeSaleQuery/office/tsmarea/VBASaleTSMAreaQuery'
+import PendingActivation from './Pages/pendingActivation/PendingActivation.jsx'
 
 
-axios.defaults.baseURL = 'https://medplbackend.onrender.com';
+axios.defaults.baseURL = 'http://localhost:4000';
 axios.defaults.withCredentials = true
 
 function App() {
@@ -58,6 +59,8 @@ function App() {
     
           <Route path='/asmshopsalequery' element={<AsmShopSaleQuery />} />
           <Route path='/adminpanal' element={<AdminPanal />} />
+
+          <Route path='/pendingactivation' element={<PendingActivation />} />
           
         </Route>
         <Route path='*' element={<Error />} />
