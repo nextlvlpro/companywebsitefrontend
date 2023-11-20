@@ -87,19 +87,19 @@ export default function AsmPendingActivation() {
                         </div>
                         <div className='flex gap-3 p-2'>
                             <div>
-                                <h1 className='h-10 w-22'>IMEI</h1>
+                                <h1 className='h-10 w-22 font-semibold'>IMEI</h1>
                                 {items.imei.split(',').map((theitem,i) => (
                                     <div key={i}>{theitem}</div>
                                 ))}
                             </div>
                             <div>
-                                <h1 className='h-10 w-18 '>Upload Date</h1>
+                                <h1 className='h-10 w-18 font-semibold'>Upload Date</h1>
                                 {items.uploaddate.split(',').map((theitem,i) => (
                                     <div key={i}>{theitem.split('T')[0]}</div>
                                 ))}
                             </div>
                             <div>
-                                <h1 className='h-10 w-18'>Product</h1>
+                                <h1 className='h-10 w-18 font-semibold'>Product</h1>
                                 {items.product.split(',').map((theitem,i) => (
                                     <div key={i}>{theitem}</div>
                                 ))}
