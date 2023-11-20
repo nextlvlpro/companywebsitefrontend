@@ -74,7 +74,7 @@ export default function PendingPuch() {
                 </div>
             )}
             {finalImei?.map((items, i) => (
-                <div key={i} className='border border-black rounded md:w-[400px] mx-auto mt-2'>
+                <div key={i} className='border border-black rounded md:w-[400px] mx-auto mt-2 p-2'>
                     <div className='flex flex-col justify-start'>
                         <div className=''>
                             <div className='bg-blue-500 p-1 rounded text-white text-sm'>
