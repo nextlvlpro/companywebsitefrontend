@@ -66,7 +66,7 @@ export default function PendingPuch() {
     }, [imeiData])
 
     return (
-        <div className='mt-2'>
+        <div className='mt-2 px-2'>
             <div className='bg-blue-500 text-white p-2 rounded mb-2 w-[200px] mx-auto text-center'>Pending Upload {imeiData && (<>{`(${imeiData.length})`}</>)}</div>
             {!!loading && (
                 <div className='md:w-[500px] mx-auto'>
