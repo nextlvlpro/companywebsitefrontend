@@ -69,7 +69,7 @@ export default function AsmPendingActivation() {
             )}
             <div className='text-sm flex flex-col gap-1'>
                 {showimei && showimei.map((items, i) => (
-                    <div key={i} className='flex flex-col border border-black p-1 rounded'>
+                    <div key={i} className='flex flex-col border border-black rounded'>
                         <div className='bg-blue-500 p-2 rounded text-white'>
 
                             {user.subdesignation =='vba' && (
