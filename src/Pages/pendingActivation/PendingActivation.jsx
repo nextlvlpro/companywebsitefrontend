@@ -6,6 +6,7 @@ export default function PendingActivation() {
     const {user} = useContext(UserContext)
   return (
     <div>
+      
       <AsmPendingActivation/>
 
     </div>

@@ -16,17 +16,20 @@ export default function AsmPendingActivation() {
             axios.post('/pendingactivationsshop', { area: user.area, subdesignation: user.subdesignation,uploadercode:user.vworkid }).then(({ data }) => {
                 setPendingActivationShops(data);
             });
+            
         }
     }, [user])
 
     useEffect(()=> {
         setLoading(true)
+        
         if (pendingActivationShops) {
-            
             pendingActivationShops.forEach(element => {
+               
                 if (!shops.includes(element.shopname)) {
                     shops.push(element.shopname)
                 }
+                
             });
             
             if (shops) {
@@ -52,6 +55,7 @@ export default function AsmPendingActivation() {
         }
         
         setshowimei(shopimei)
+       
         
     },[pendingActivationShops])
     
