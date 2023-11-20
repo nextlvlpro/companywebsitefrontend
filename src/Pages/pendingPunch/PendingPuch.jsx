@@ -67,14 +67,14 @@ export default function PendingPuch() {
 
     return (
         <div className='mt-2'>
-            <div className='bg-blue-500 text-white p-2 rounded mb-2 md:w-[500px] mx-auto'>Pending Upload {imeiData && (<>{`(${imeiData.length})`}</>)}</div>
+            <div className='bg-blue-500 text-white p-2 rounded mb-2 w-[200px] mx-auto text-center'>Pending Upload {imeiData && (<>{`(${imeiData.length})`}</>)}</div>
             {!!loading && (
                 <div className='md:w-[500px] mx-auto'>
                     Loading....
                 </div>
             )}
             {finalImei?.map((items, i) => (
-                <div key={i} className='border border-black p-2 rounded md:w-[500px] mx-auto mt-2'>
+                <div key={i} className='border border-black rounded md:w-[400px] mx-auto mt-2'>
                     <div className='flex flex-col justify-start'>
                         <div className=''>
                             <div className='bg-blue-500 p-1 rounded text-white text-sm'>
