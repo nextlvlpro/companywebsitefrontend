@@ -28,7 +28,7 @@ import PendingActivation from './Pages/pendingActivation/PendingActivation.jsx'
 import PendingPuch from './Pages/pendingPunch/PendingPuch.jsx'
 
 
-axios.defaults.baseURL = 'http://localhost:4000';
+axios.defaults.baseURL = 'https://medplbackend.onrender.com';
 axios.defaults.withCredentials = true
 
 function App() {
