@@ -12,7 +12,7 @@ export default function HeroPage() {
   return (
     <div className='m-auto w-full flex items-center justify-center mt-4 p-1 flex-col'>
       <div className='text-white p-4'>
-        Welcome to MEDPL Official Website
+        Welcome to MEDPL
       </div>
       <div className='rounded-2xl overflow-hidden border-2 p-1'>
       <img src={logo} alt="logo" className='w-96 rounded-2xl shadow-sm shadow-black' />
