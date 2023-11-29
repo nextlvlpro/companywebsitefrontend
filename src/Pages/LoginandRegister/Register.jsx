@@ -12,6 +12,7 @@ export default function Register() {
     const [otpConfirmation, setOtpConfirmation] = useState(false)
     const [otpConfirmed, setOtpConfirmed] = useState(false)
     const [showToast, setShowToast] = useState(false);
+    const [genratedOtp, setGenratedOtp] = useState(null);
 
     const navigate = useNavigate('')
 
@@ -41,8 +42,13 @@ export default function Register() {
     function reqTheOtp(e) {
         e.preventDefault()
         axios.post('/register', { email, reqOtp }).then((res) => {
-            if(res.data =='done') {
+            if(res.data) {
+               
                 setShowToast(`OTP is Sent to your Email`)
+                setGenratedOtp(res.data)
+                localStorage.setItem('Otp',res.data)
+            }else {
+                setShowToast(`failed`)
             }
         })
     }
@@ -52,7 +58,7 @@ export default function Register() {
         e.preventDefault()
         setOtpConfirmation(true)
 
-        axios.post('/register', { email, otp, otpConfirmation }).then((res) => {
+        axios.post('/register', { email, otp, otpConfirmation,genratedOtp }).then((res) => {
             if (res.data == 'otp confiremed') {
                 setOtpConfirmed(true)
                 setreqOtp(false)
