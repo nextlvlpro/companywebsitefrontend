@@ -49,6 +49,9 @@ export default function TsmSchemePayout() {
                     <div className='px-3 font-semibold flex gap-2 items-center'>
                        <div className='w-[140px]'>September Payout : </div>  <div>₹{Intl.NumberFormat('en-in').format(items.septpayout)}</div>
                     </div>
+                    <div className='px-3 font-semibold flex gap-2 items-center'>
+                       <div className='w-[140px]'>October Payout : </div>  <div>₹{Intl.NumberFormat('en-in').format(items.octpayout)}</div>
+                    </div>
                 </div>
             )) }
 
