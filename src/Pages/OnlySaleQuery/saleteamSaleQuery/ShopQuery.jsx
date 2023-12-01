@@ -7,7 +7,8 @@ export default function ShopQuery() {
   const { user } = useContext(UserContext);
   const [shopSaleData, setShopSaleData] = useState(null)
   const [loading, setLoading] = useState(false)
-
+  const [theshopsales, setTheshopsales] = useState(null)
+  const [theshoptgt, setTheshoptgt] = useState(null)
   const tsmarea = useParams()
 
   useEffect(() => {
@@ -15,15 +16,38 @@ export default function ShopQuery() {
       setLoading(true)
       axios.post('/tsmsalequery', tsmarea).then(({ data }) => {
         setShopSaleData(data)
+        
+        
         setLoading(false)
       })
     }
   }, [user])
 
+  useEffect(()=> {
+    if(shopSaleData){
+      let totalshopsale = 0
+      let totalshoptgt = 0
+      if(shopSaleData) {
+        for (let i = 0; i < shopSaleData.length; i++) {
+         totalshopsale += shopSaleData[i].ach
+         totalshoptgt += shopSaleData[i].target
+        }
+        setTheshopsales(totalshopsale)
+        setTheshoptgt(totalshoptgt)
+      }
+    }
+  },[shopSaleData])
+
   return (
     <div className='flex flex-col px-2'>
       <div className='bg-blue-500 p-2 text-white rounded text-center w-[250px] m-auto my-5'>
-        Shop Sale Query {`(${tsmarea.tsmarea})`}
+        Shop Sale Query {`(${tsmarea.tsmarea})`} 
+        <br /> 
+        {!!shopSaleData && (<>{`Total Target (${theshoptgt})`}</>)}
+        <br />
+        {!!shopSaleData && (<>{`Total Activations (${theshopsales})`}</>)}
+        <br/>
+        Ach: {!! shopSaleData && (<>({((theshopsales/theshoptgt)*100).toFixed(2)}%)</>)}
       </div>
       {shopSaleData?.map((items, i) => (
 

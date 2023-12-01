@@ -19,6 +19,7 @@ export default function SaleTeamSaleQuery() {
           Loading...
         </>
       )}
+      
       {!loading && (
         <div className='w-full flex items-center justify-center flex-col gap-4 p-10'>
           {user?.subdesignation == 'asm' && (

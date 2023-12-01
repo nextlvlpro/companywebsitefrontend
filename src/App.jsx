@@ -26,9 +26,12 @@ import ShopSaleTSMAreaQuery from './Pages/OnlySaleQuery/officeSaleQuery/office/t
 import VBASaleTSMAreaQuery from './Pages/OnlySaleQuery/officeSaleQuery/office/tsmarea/VBASaleTSMAreaQuery'
 import PendingActivation from './Pages/pendingActivation/PendingActivation.jsx'
 import PendingPuch from './Pages/pendingPunch/PendingPuch.jsx'
+import SchemePayout from './Pages/SchemePayout/SchemePayout.jsx'
+import TsmSchemePayout from './Pages/SchemePayout/TsmSchemePayout.jsx'
+import TsmAreaQuery from './Pages/SchemePayout/officeteam/TsmAreaQuery.jsx'
 
 
-axios.defaults.baseURL = 'https://medplbackend.onrender.com';
+axios.defaults.baseURL = 'http://localhost:4000';
 axios.defaults.withCredentials = true
 
 function App() {
@@ -51,11 +54,14 @@ function App() {
           <Route path='/saleteamshopsalequery/:tsmarea' element={<ShopQuery />} />
           <Route path='/asmvbasalequery' element={<AsmVbaSaleQuery />} />
           <Route path='/tsmareavbasalequery/:tsmarea' element={<TsmVbaSaleQuery />} />
+          <Route path='/schemepayout' element={<SchemePayout />} />
+          <Route path='/tsmschemepayout/:tsmarea' element={<TsmSchemePayout />} />
 
           <Route path='/officeshopquery' element={<OfficeShopQuery />} />
           <Route path='/officevbaquery' element={<OfficeVBASaleQuery />} />
           <Route path='/shopsaletsmareaquery/:asmarea' element={<ShopSaleTSMAreaQuery />} />
           <Route path='/vbasaletsmareaquery/:asmarea' element={<VBASaleTSMAreaQuery />} />
+          <Route path='/officeretailertsmquery/:asmarea' element={<TsmAreaQuery />} />
           
     
           <Route path='/asmshopsalequery' element={<AsmShopSaleQuery />} />

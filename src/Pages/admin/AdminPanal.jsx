@@ -5,6 +5,7 @@ import EmployeeInfo from './EmployeeInfo'
 import Vbasales from './Vbasales'
 import PendingActivationUpload from './PendingActivationUpload'
 import PendingPunchupload from './PendingPunchupload'
+import RetailerPayoutUpload from './RetailerPayoutUpload'
 
 
 export default function AdminPanal() {
@@ -19,6 +20,7 @@ export default function AdminPanal() {
       <Vbasales/>
       <PendingActivationUpload />
       <PendingPunchupload />
+      <RetailerPayoutUpload />
     </div>
     )}
     {!user?.email == 'bhanusharma089@gmail.com' && (
