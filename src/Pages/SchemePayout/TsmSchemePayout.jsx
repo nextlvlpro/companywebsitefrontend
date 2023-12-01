@@ -30,7 +30,7 @@ export default function TsmSchemePayout() {
                 Retailer Payout {`(${tsmarea.tsmarea})`}
             </div>
             {!!retailerpayout && retailerpayout.map((items,i) => (
-                <div key={i} className='flex flex-col border my-1 border-black rounded md:w-[500px] text-sm'>
+                <div key={i} className='flex flex-col border my-1 border-black rounded md:w-[500px] w-full text-sm'>
                     <div className='bg-blue-500 text-white p-1 '>
                         Shop Name : {items.storename}
                     </div>
