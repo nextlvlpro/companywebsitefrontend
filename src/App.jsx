@@ -31,7 +31,7 @@ import TsmSchemePayout from './Pages/SchemePayout/TsmSchemePayout.jsx'
 import TsmAreaQuery from './Pages/SchemePayout/officeteam/TsmAreaQuery.jsx'
 
 
-axios.defaults.baseURL = 'https://medplbackend.onrender.com';
+axios.defaults.baseURL = 'http://localhost:4000';
 axios.defaults.withCredentials = true
 
 function App() {

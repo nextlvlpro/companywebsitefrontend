@@ -3,6 +3,7 @@ import { UserContext } from '../../UserContext'
 import AsmSchemePayout from './AsmSchemePayout'
 import TsmSchemePayout from './TsmSchemePayout'
 import OfficeRetailerPayout from './officeteam/OfficeRetailerPayout'
+import TheTsmAreaPayout from './TsmSchemePayout/TheTsmSchemePayout'
 
 export default function SchemePayout() {
     const { user } = useContext(UserContext)
@@ -13,7 +14,7 @@ export default function SchemePayout() {
             )}
 
             {!!user && user?.subdesignation == 'tsm' && (
-                <TsmSchemePayout />
+                <TheTsmAreaPayout/>
             )}
             {!!user && user?.subdesignation == 'office' && (
                 <OfficeRetailerPayout />

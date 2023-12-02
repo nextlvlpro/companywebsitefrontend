@@ -1,20 +1,23 @@
 import axios from 'axios'
 import React, { useContext, useEffect, useState } from 'react'
-import { UserContext } from '../../UserContext'
-import { useParams } from 'react-router-dom'
+import { UserContext } from '../../../UserContext'
 
-export default function TsmSchemePayout() {
+
+
+export default function TheTsmAreaPayout() {
 
     const { user } = useContext(UserContext)
     const [retailerpayout, setRetailerpayout] = useState(null)
     const [loading, setLoading] = useState(false)
-    const tsmarea = useParams()
+    
 
 
     useEffect(() => {
         if (user) {
+            const tsmarea = user.area.toUpperCase()
+            
             setLoading(true)
-            axios.post('/retailerpayout', tsmarea).then(({ data }) => {
+            axios.post('/retailerpayout', {tsmarea}).then(({ data }) => {
                 setRetailerpayout(data)
                 setLoading(false)
             })
@@ -28,7 +31,7 @@ export default function TsmSchemePayout() {
     return (
         <div className='flex flex-col items-center'>
             <div className='bg-blue-500 p-2 text-white rounded text-center w-[250px] m-auto my-5'>
-                Retailer Payout {`(${tsmarea.tsmarea})`}
+                Retailer Payout {`(${user.area.toUpperCase()})`}
             </div>
             {!!retailerpayout && retailerpayout.map((items,i) => (
                 <div key={i} className='flex flex-col border my-1 border-black rounded md:w-[500px] w-full text-sm'>
